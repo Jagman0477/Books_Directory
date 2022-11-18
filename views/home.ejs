@@ -1,0 +1,27 @@
+<%- include('partials/header'); -%>
+
+    <div class="catalog"> 
+        <% books.forEach(function(book){ %>
+            <div class="catalogitem"><a href="/books/<%= book._id %>">
+                    <% if (book.thumbnailUrl===undefined) { %>
+                        <img src="https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
+                            alt="No Book Cover available.">
+                        <% } else {%>
+                            <img src="<%=book.thumbnailUrl%>" alt="Book Cover">
+                            <% } %>
+                                <h3>
+                                    <%= book.title %>
+                                </h3>
+                                <div class="short-des">
+                                    <p>
+                                        <%= book.shortDescription %>
+                                    </p>
+                                </div>
+                                
+                            </div>
+                </a>            
+            <% }); %>
+
+    </div>
+    
+    <%- include('partials/footer') -%>

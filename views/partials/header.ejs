@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Directory</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="full-hamburger">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <ul class="navbar">
+            <li><a href="/" class="brand">Book Stack</a></li>
+            <li><a href="" class="">About</a></li>
+            <li><a href="" class="">Contact</a></li>
+            <li><a href="/book/add" class="">Add Book</a></li>
+            <li class="push-right" id="last-list">
+                <form action="/books/search" method="post">
+                    <input type="text" placeholder="Enter Book name" id="search-bar" name="bookName" class="from-elem" autocomplete="off">
+                    <button class="form-elem search-btn">Search</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <div class="side-nav">
+        <ul>
+            <li><a href="/author">Authors</a></li>
+            <li><a href="/categories">Categories</a></li>
+        </ul>
+    </div>

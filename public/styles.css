@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Silkscreen&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  background-image: linear-gradient(to right, #000d1a, #00264d);
+  padding: 0 0 40px 0;
+}
+nav ul {
+  padding: 20px 5%;
+  padding-right: 0;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  height: 64px;
+}
+nav {
+  background-color: #000d1a;
+  /* margin-bottom: 50px; */
+}
+form {
+  margin: 0 30px;
+}
+a {
+  text-decoration: none;
+}
+
+
+.brand {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-right: 50px;
+}
+.from-elem {
+  margin: 0 15px;
+}
+.navbar a,
+.navbar li form {
+  background-color: transparent;
+  color: white;
+}
+.navbar li {
+  margin: 30px;
+  align-self: center;
+  font-family: "Silkscreen", cursive;
+  font-size: 1.25rem;
+  background-color: transparent;
+}
+#last-list {
+  margin-left: auto;
+}
+#search-bar {
+  border-radius: 16px;
+  height: 40px;
+  width: 300px;
+  padding: 0 20px;
+  caret-color: #dedede;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border: 1px solid #90909094;
+}
+.navbar li form input {
+  background-color: #001a33;
+  border-color: transparent;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.search-btn {
+  background-color: #001a33;
+  font-family: "Silkscreen", cursive;
+  height: 40px;
+  width: 100px;
+  border-radius: 16px;
+  border-color: transparent;
+  color: white;
+}
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 4px;
+  background-color: transparent;
+  margin: 6px 0;
+  background-color: whitesmoke;
+  transition: 0.4s;
+}
+/**************************************Animation*****************************************/
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+/**************************************Animation Finish*****************************************/
+.full-hamburger {
+  display: inline-block;
+  position: absolute;
+  left: 40px;
+  top: 17px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #000d1a;
+  text-align: center;
+  height: 60px;
+  margin: auto;
+  width: 100%;
+}
+.footer p {
+  padding: 15px;
+  color: white;
+}
+.catalog{
+  display: flex;
+  margin: 40px 100px;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.catalogitem{
+  background-color: #001a33;
+  color: black;
+  text-align: center;
+  transition: transform .2s;
+  flex: 0 0 200px;
+  margin: 20px 31.92px;
+  border-color: transparent;
+  border-radius: 17px;
+  position: relative;
+}
+.catalogitem img{
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  width: 100%;
+  min-height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+}
+.short-des{
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: inherit;
+  background-color: #dedede;
+  opacity: 0;
+  /* background: rgba( 255, 255, 255, 0.4 );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 13px ); */
+  color: #001a33;
+  border-radius: 17px;
+  overflow: auto;
+  padding: 0 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  max-height: 355px;
+  transition: .2s ease-in;
+}
+.short-des::-webkit-scrollbar {
+  width: 5px;
+}
+.catalogitem a{
+  color: white;
+}
+.catalogitem h3{
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 5px;
+}
+.bookdata{
+  display: flex;
+  margin: 40px 100px;
+  justify-content: start;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.bookdata img{
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.bookdata div h1{
+  color: white;
+  /* position: absolute; */
+  width: 300px;
+  text-align: center;
+}
+.bookData2{
+  margin: 0 0 10px 160px;
+  
+}
+.bookData2 span{
+  font-weight: 500;
+  font-size: 23px;
+  color:aquamarine
+}
+.bookData2 p{
+  font-weight: 400;
+  font-size: 18px;
+}
+.side-nav{
+  position: fixed;
+  left: -350px;
+  top: 0;
+  z-index: 1;
+  width: 350px;
+  height: 95vh;
+  background-color: #000d1a;
+  border-radius: 17px;;
+  overflow: auto;
+  padding: 10px;
+  margin: 18px 0;
+  transition: 0.3s;
+  color: white;
+  border: 2px solid white;
+  font-family: "Silkscreen", cursive;
+  font-size: 18px;
+}
+.side-nav-slidein{
+  transform: translateX(450px);
+}
+.side-nav-slideout{
+  transform: translateX(-450px);
+}
+.side-nav ul, .side-nav ul a{
+  list-style-type: none;
+  color: rgb(207, 207, 207);
+}
+.side-nav ul li {
+  width: 100%;
+  height: 30px;
+  margin: 20px 0;
+}
+.delete-btn{
+  width: 200px;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 17px;
+  border: 2px solid white;
+  text-align: center;
+  color: white;
+  margin: 20px 50px;
+  font-family: "Silkscreen", cursive;
+  font-size: 18px;
+  transition: transform .2s;
+}
+.addbook{
+  margin: 40px 100px;
+}
+.addrow{
+  display: flex;
+  margin: 20px 0;
+  background-color: transparent;
+  color: aquamarine;
+  align-items: center;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+
+}
+.addrow textarea{
+  font-size: 18px;
+  border-radius: 16px;
+  padding: 10px 20px;
+  caret-color: #90909094;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #90909094;
+  color: white;
+}
+.addrow input{
+  border: 2px solid #90909094;
+  font-size: 18px;
+  height: 40px;
+  width: 300px;
+  border-radius: 16px;
+  padding: 0 20px;
+  caret-color: white;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+.addrow label{
+  align-items: center;
+  margin: 10px 30px 10px 50px;
+}
+#bookAdd-btn{
+  padding: 6px;
+  border: 2px solid white;
+  border-radius: 18px;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: aquamarine;
+  background-color: #001a33;
+  margin-left: 42px;
+  margin-bottom: 5px;
+}
+.transparentButton{
+  color: rgb(205, 205, 205);
+  margin: 20px 15px;
+  padding: 0;
+  border-radius: 25px;
+  height: 30px;
+  width: 200px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  background-color: transparent;
+  border-color: transparent;
+  transition: transform .2s;
+}
+.auth_catePages{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin: 40px;
+}
+#authTitle{
+  font-family: "Silkscreen", cursive;
+  color: white;
+  margin: 20px 106px;
+  font-size: 36px;
+}
+.auth_cateForm{
+  margin: 0;
+  padding: 0;
+  
+}
+.auth_cate{
+  flex: 0 0 200px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+
+.addrow input:focus, .addrow textarea:focus{
+  border-color: white;
+}
+.addrow input::placeholder, .addrow textarea::placeholder{
+  color: #90909094;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.side-nav a:hover{
+  color: white;
+}
+.catalogitem:hover, .delete-btn:hover{
+  box-shadow: 0 4px 8px 0 rgba(224, 224, 224, 0.667);
+  transform: scale(1.15);
+}
+::placeholder {
+  color: #90909094;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+#search-bar:focus{
+  border-color: white;
+}
+input[type="checkbox"]  {
+  display: none;
+}
+.auth_cateForm button:hover{
+  transform: scale(1.15);
+  color: aquamarine;
+}

@@ -1,0 +1,36 @@
+<%- include('partials/header'); -%>
+ 
+            <div class="bookdata">
+                <div>
+                    <% if (book.thumbnailUrl===undefined) { %>
+                        <img src="https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
+                            alt="No Book Cover available.">
+                        <% } else {%>
+                            <img src="<%=book.thumbnailUrl%>" alt="Book Cover">
+                            <% } %>                                
+                            <h1>
+                                <%= book.title %>
+                            </h1> 
+                            <button onclick="location.href = '/books/delete/<%= book._id %>'" class="delete-btn">Delete This Book</button>
+                        </div> 
+                            <div class="bookData2"> <p><span>ISBN: </span><%= " "+book.isbn %></p> 
+                            <p><span>Page Count: </span><%= " "+book.pageCount %></p>
+                            <p><span>Status: </span><%= " "+book.status %></p>
+                            <p><span>Authors: </span><% for( let i = 0; i < (book.authors).length; i++ ) { %>
+                                <%= book.authors[i] %><% if (book.authors[i+1]) { %>
+                                 <%= "," %> 
+                                <% } else { %>
+                                 <%= " " %>
+                                 <% } %>   
+                            <% } %> </p>    
+                            <p><span>Categories: </span><% for( let i = 0; i < (book.categories).length; i++ ) { %>
+                                <%= book.categories[i] %><% if (book.categories[i+1]) { %>
+                                 <%= "," %> 
+                                <% } else { %>
+                                 <%= " " %>
+                                 <% } %>   
+                            <% } %> </p>                                                                
+                            <p><span>Description: </span><%= " "+book.longDescription+"." %></p> </div> 
+                        </div> 
+
+    <%- include('partials/footer') -%>

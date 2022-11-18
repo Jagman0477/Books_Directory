@@ -1,0 +1,44 @@
+<%- include('partials/header'); -%>
+
+    <form action="/book/add/adding" method="post" class="addbook">
+        <div class="addrow">
+            <label for="">Name: </label>
+            <input type="text" name="name" placeholder="Book name" autocapitalize="words" style="margin-left: 116px;" required autocomplete="off">
+        </div>
+        <div class="addrow">
+            <label for="">ISBN: </label>
+            <input type="number" name="isbn" placeholder="13 digit ISBN code" min="0" style="margin-left: 128px;" required autocomplete="off">
+        </div>
+        <div class="addrow">
+            <label for="">Thumbnail URL: </label>
+            <input type="text" name="url" placeholder="https://www.x-xxx.com/x-xxx.jpeg" style="margin-left: 21px;" autocomplete="off">
+        </div>
+        <div class="addrow">
+            <label for="">Page Count: </label>
+            <input type="number" name="pageCount" placeholder="No. of Pages" min="1" style="margin-left: 58px;" autocomplete="off">
+        </div>
+        <div class="addrow">
+            <label for="">Short Description: </label>
+            <textarea name="shortDesc" id="" cols="40" rows="5" placeholder="Short Description ....." autocomplete="off" autocapitalize="on" maxlength="125"></textarea>
+        </div>
+        <div class="addrow">
+            <label for="">Long Description: </label>
+            <textarea name="longDesc" id="" cols="45" rows="10" placeholder="Long Description ....." autocomplete="off" autocapitalize="on"style="margin-left: 1px;"></textarea>
+        </div>
+        <div class="addrow">
+            <label for="">Status: </label>
+            <input name="status" id="" placeholder="Published or not ...." autocomplete="off" autocapitalize="on"style="margin-left: 109px;"></input>
+        </div>
+        <div class="addrow">
+            <label for="">Authors: </label>
+            <textarea name="authors" id="" cols="30" rows="4" placeholder="Author1, Author2, ...." autocomplete="off" autocapitalize="on"style="margin-left: 91px;"></textarea>
+        </div>
+        <div class="addrow">
+            <label for="">Categories: </label>
+            <textarea name="categories" id="" cols="30" rows="4" placeholder="Category1, Category2, ...." autocomplete="off" autocapitalize="on"style="margin-left: 62px;"></textarea>
+        </div>
+        <button type="submit" id="bookAdd-btn">Add Book</button>
+
+    </form>
+
+    <%- include('partials/footer'); -%>

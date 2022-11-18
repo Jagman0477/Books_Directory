@@ -1,0 +1,54 @@
+<%- include('partials/header'); -%>
+
+<% const arr = []; %> 
+<%if (type === "authors") { %>
+<% authors.forEach(function(author){ %>
+    <% arr.push(author.authors) %> 
+<% }) %>
+
+    <% let uniqueArr = [...new Set(arr)]; %>
+    <h1 id="authTitle">Author Names</h1>
+        <div class="auth_catePages">
+            
+        <% uniqueArr.forEach(function(uniqueArrElem){ %>
+        <% uniqueArrElem.forEach(function(uniqueName){ %>
+            
+        <div class="auth_cate">
+
+            <form action="/books/author/<%= uniqueName %>" method="post" id="<%= _.camelCase(uniqueName) %>" class="auth_cateForm">
+                <button type="submit" name="submit" class="transparentButton"><%= uniqueName %></button>
+                <input type="hidden" name="value" value="<%= uniqueName %>">
+            </form>
+            
+        </div>
+
+        <% }) %>
+    <% }) %>
+</div>
+    <% } else if (type === "categories") { %>
+        <% categories.forEach(function(category){ %>
+        <% (category.categories).forEach(function(item){ %>
+            <% arr.push(item); %> 
+       <% })%> 
+        <% })%>
+    
+        <% let uniqueArr = [...new Set(arr)]; %>
+        <h1 id="authTitle">Categories</h1>
+            <div class="auth_catePages">
+                
+            <% uniqueArr.forEach(function(uniqueArrElem){%>
+                
+            <div class="auth_cate">
+    
+                <form action="/books/categories/<%= uniqueArrElem %>" method="post" id="<%= _.camelCase(uniqueArrElem) %>" class="auth_cateForm">
+                    <button type="submit" name="submit" class="transparentButton"><%= uniqueArrElem %></button>
+                    <input type="hidden" name="value" value="<%= uniqueArrElem %>">
+                </form>
+                
+            </div>
+    
+            <% }) %>
+    </div>    
+<% } %> 
+
+<%- include('partials/footer'); -%>
